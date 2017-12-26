@@ -14,16 +14,16 @@ for child in root.findall('{http://code.google.com/p/open-zwave/}Generic'):
         iname = Specific.attrib.get('icon')
         if id2 and pname and iname:
             ele_map = {}
-            print id1,id2,id1+id2[2:]
+            print (id1,id2,id1+id2[2:])
             ele_map['IconId'] = (id1 + id2[2:]).rstrip('\n').rstrip(' ')
             ele_map['name'] = pname.rstrip('\n').rstrip(' ')
             ele_map['IconName'] = iname.rstrip('\n').rstrip(' ')
-            print ele_map
+            print (ele_map)
             json_data_org.append(ele_map)
         else:
-            print id2 + pname
-print json_data_org
-print len(json_data_org)
+            print (id2 + pname)
+print (json_data_org)
+print (len(json_data_org))
 
 def save_result_txt(file='res.txt', data=""):
     list_res = ""
